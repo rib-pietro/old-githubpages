@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.container {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border: 1px solid black;
+    float: left;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: white;
+}
+
+@media screen and (max-width: 960px){
+    div.container:first-child, div.container:last-child {
+        /* background-color: green; */
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px){
+    div.container {
+        background-color: blue;
+    }
+}
