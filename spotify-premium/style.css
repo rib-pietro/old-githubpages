@@ -1,0 +1,74 @@
+* {
+    font-family: Helvetica, sans-serif;
+}
+
+header {
+    background-color: rgb(240, 55, 165);
+}
+
+header nav {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+header nav .nav-item {
+    margin: 0 0.5rem;
+}
+
+header img {
+    width: 95%;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 3.1rem;
+    line-height: 4rem;
+    margin-bottom: 2rem;
+}
+
+h2.subtitle {
+    font-size: 1.35rem;
+    margin-bottom: 3.5rem;
+}
+
+.black-btn {
+    background-color: black;
+    padding: 1rem 3rem;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5rem;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.black-btn:hover {
+    color: white;
+    text-decoration: none;
+    padding: 1.1rem 3.3rem;
+}
+
+.general-section .container {
+    padding: 5rem 0;
+}
+
+.general-section h2 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 3rem;
+}
+
+.general-section h3 {
+    margin-top: 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.general-section p {
+    text-align: center;
+}
+
+.general-section .card img {
+    align-self: flex-start;
+    height: 1.4rem;
+}

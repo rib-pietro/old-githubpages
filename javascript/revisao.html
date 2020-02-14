@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="paragraph" style="color: green;">
+        Lorem <a href="#">click</a> dolor sit amet consectetur, adipisicing elit. Facere dolore earum rerum libero cupiditate suscipit accusantium fugit consectetur quae delectus animi eum eligendi esse temporibus laborum laudantium, quo quam unde!
+    </p>
+
+    <!-- 
+        É MUITO IMPORTANTE a chamada da função de callback ao evento de clique, 
+        caso contrário, a função NUNCA será executada 
+    -->
+    <!--
+        O valor de um parâmetro é definido SEMPRE na chamada da função.
+    -->
+    <button onclick="changeText()">Click me</button>
+
+    <script>
+        // Recuperando elemento
+        // var paragraph = document.getElementById('paragraph');
+        var paragraph = document.querySelector('#paragraph'); // querySelector() é um método de elementos HTML
+        // var id = paragraph.id;
+        // paragraph.style.color = 'blue';
+        // console.log(paragraph.innerHTML); // innerHTML é um atributo de elementos HTML
+
+        function changeText(){
+            paragraph.innerHTML = 'Eu odeio JavaScript';
+        }
+
+        console.log(paragraph.innerText);
+    </script>
+</body>
+</html>

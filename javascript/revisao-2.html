@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-container {
+            display: flex;
+            width: 100%;
+        }
+        .flex-container .item {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <button onclick="justify('flex-start')">flex-start</button>
+    <button onclick="justify('center')">center</button>
+    <button onclick="justify('flex-end')">flex-end</button>
+
+    <script>
+        function justify(alignment){
+            let container = document.querySelector('.flex-container');
+            container.style.justifyContent = alignment;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="addItem()">Add Item</button>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li id="li3"></li>
+    </ul>
+
+    <script>
+        function addItem() {
+            // Recuperar texto do usuário
+            let mensagem = prompt('Informe o texto do item:');
+            if(mensagem){
+                let list = document.querySelector('ul');
+                let newItem = `<li>${mensagem}</li>`; // delimitado por crases (back-ticks)
+                list.innerHTML += newItem;
+            } else {
+                alert('Informe alguma coisa!!!');
+                addItem();
+            }
+        }
+        // function addItem() {
+        //     let mensagem = prompt('Informe o texto do item:');
+        //     let thirdItem = document.querySelector('#li3');
+        //     thirdItem.innerText = mensagem;
+        // }
+    </script>
+</body>
+</html>

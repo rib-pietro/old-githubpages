@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!--
+        Crie uma div de 200px X 200px com uma cor de fundo preta e crie 6 botões para alterar as componentes red, green e
+        blue dessa cor de fundo, três para aumentar em 10 cada um dos valores dos componentes e outros três para diminuir
+        esses valores também em 10.
+    -->
+
+    <style>
+        #challenge-1 {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            /* padding: 100px;
+            display: inline-block; */
+        }
+    </style>
+</head>
+<body>
+    <div id="challenge-1"></div>
+
+    <button onclick="increaseColorPoint(10, 0, 0)">Mais vermelho</button>
+    <button onclick="increaseColorPoint(0, 10, 0)">Mais verde</button>
+    <button onclick="increaseColorPoint(0, 0, 10)">Mais azul</button>
+    <button onclick="increaseColorPoint(-10, 0, 0)">Mais vermelho</button>
+    <button onclick="increaseColorPoint(0, -10, 0)">Mais verde</button>
+    <button onclick="increaseColorPoint(0, 0, -10)">Mais azul</button>
+
+    <script>
+        var r = 0;
+        var g = 0;
+        var b = 0;
+
+        function increaseColorPoint(diffR, diffG, diffB){
+            let box = document.querySelector('#challenge-1'); // Recuperando a div "alvo"
+            r += diffR; // Fazendo o incremento da variável que controla o componente red a partir do parâmetro
+            g += diffG; // Fazendo o incremento da variável que controla o componente blue a partir do parâmetro
+            b += diffB; // Fazendo o incremento da variável que controla o componente green a partir do parâmetro
+            box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; // Aplicando a propriedade de estilo com os novos valores já calculados
+        }
+    </script>
+</body>
+</html>
