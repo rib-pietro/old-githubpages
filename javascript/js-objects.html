@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <input type="text" id="busca" placeholder="Nome completo">
+        <button onclick="cospeValor(event)">Click!!</button>
+    </form>
+
+    <button onclick="addProp()">Click!!</button>
+
+    <script>
+        // Objetos literais
+        let pessoa = { // JSON -> JavaScript Object Notation
+            nome: 'Wal Wal',
+            idade: 38,
+            cidade: 'São Paulo',
+            signo: 'Capricórnio',
+            dataDeNascimento: '15/01/1982',
+            filhos: [
+                'Maria',
+                'João',
+                'Guilherme'
+            ],
+            pai: {
+                nome: 'Sr. Wal Wal',
+                idade: 66,
+                cidade: 'São Paulo',
+                signo: 'Gêmeos',
+                dataDeNascimento: '26/05/1954',
+            },
+            cumprimenta: function(){
+                console.log(`Oi ${this.nome}`);
+            }
+        };
+
+        function addProp(){
+            let prop = prompt('Qual propriedade você deseja adicionar?');
+            let value = prompt('Qual o valor dessa propriedade?');
+            pessoa[prop] = value;
+            console.log(pessoa);
+        }
+
+        // pessoa.estadoCivil = 'Enrolado';
+        // pessoa['estadoCivil'] = 'Enrolado';
+
+        // console.log(pessoa);
+
+        // mundo;
+        // // console.log(mundo);
+        // delete mundo;
+        // console.log(mundo);
+
+        // console.log(pessoa);
+
+        // console.log(pessoa.nome);
+        // console.log(pessoa['nome'] + ' ' + pessoa.idade);
+        // console.log(pessoa.filhos[1]);
+        // console.log(pessoa['filhos'][1]);
+        // console.log(pessoa.pai.signo);
+
+        /*
+        nome
+        preco
+        impostoSobre
+        tipo
+        */
+
+        // pessoa.cumprimenta();
+
+        function Pessoa(nome, idade, cidade, signo) {
+            // return {
+            //     nome,
+            //     idade,
+            //     cidade,
+            //     signo
+            // }
+            this.nome = nome;
+            this.idade = idade;
+            this.cidade = cidade;
+            this.signo = signo;
+            this.cumprimenta = function(){
+                console.log(`Olá, ${this.nome}`);
+            }
+        }
+
+        let p1 = new Pessoa('Pietro', 20, 'Silva Jardim', 'Touro');
+
+        // console.log(Object.keys(p1));
+        // console.log(Object.values(p1));
+        // console.log(Object.entries(p1));
+
+        // console.log(typeof(pessoa));
+
+        function cospeValor(e){
+            e.preventDefault();
+            let nome = document.querySelector('#nome').value;
+            let tipo = document.querySelector('#tipo').value;
+            let impostoSobre = document.querySelector('#impostoSobre').value;
+            alert(input_.value);
+        }
+
+    </script>
+</body>
+</html>

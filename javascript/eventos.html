@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .flex-container {
+            display: flex;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    
+    <!-- <button id="click">Click me!!</button> -->
+    
+    <script>
+
+        // let box = document.querySelector('.box');
+        // let colorButton = document.querySelector('#click');
+
+        
+
+        // let g = 0;
+
+        // function increaseGreen(){
+        //     g++;
+        //     box.style.backgroundColor = `rgb(0, ${g}, 0)`;
+        // }
+
+        // box.onmouseover = increaseGreen;
+
+        let boxes = document.querySelectorAll('.box');
+
+        // function changeColor() {
+        //     let r = generateRandomColorComponent();
+        //     let g = generateRandomColorComponent();
+        //     let b = generateRandomColorComponent();
+        //     box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        // }
+
+        function changeColor(e) {
+            let r = generateRandomColorComponent();
+            let g = generateRandomColorComponent();
+            let b = generateRandomColorComponent();
+            e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }
+
+        boxes.forEach(
+            (box) => {
+                box.addEventListener('click', changeColor);
+            }
+        )
+
+        // box.onclick = changeColor;
+
+        // box.addEventListener('click', changeColor);
+        /* */
+
+
+        // colorButton.onclick = changeColor;
+
+        // box.onclick = () => {
+        //     let r = generateRandomColorComponent();
+        //     let g = generateRandomColorComponent();
+        //     let b = generateRandomColorComponent();
+        //     box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        // }
+
+        function generateRandomColorComponent(){
+            return Math.round(((Math.random()*255)));
+        }
+
+    </script>
+</body>
+</html>

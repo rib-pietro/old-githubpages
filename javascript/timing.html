@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+        Crie um parágrafo com um texto inicial qualquer, crie também um botão que ao clicado,
+        após 2 segundos, mude o texto desse parágrafo pra um texto se sua escolha.
+    -->
+
+    <!-- 
+        Altere o programa anterior de modo que o texto do parágrafo mostre a quantidade de 
+        segundos passados desde que a página foi carregada.
+    -->
+
+    <div id="box"></div>
+    <button onclick="delayChangeColor()">Trocar cor!</button>
+    <button onclick="moveBox(0)">Mover a caixa!!</button>
+
+    <p id="counter"></p>
+    
+    <script>
+
+        count = 0;
+
+        // function increaseTime() {
+        //     setTimeout( () => {
+        //         let p = document.querySelector('#counter');
+        //         p.innerHTML = `Já se foram ${count} segundos`;
+        //         count++;
+        //         if (count <= 10) 
+        //             increaseTime();
+        //     }, 1000);
+        // }
+
+        // increaseTime();
+
+        // let ref = setInterval( () => {
+        //     let p = document.querySelector('#counter');
+        //     p.innerHTML = `Já se foram ${count} segundos`;
+        //     if (count < 5)
+        //         count++;
+        //     else
+        //         clearInterval(ref);
+        // }, 1000);
+
+        function moveBox(left) {
+            let box = document.querySelector('#box');
+            let ref = setInterval(() => {
+                box.style.marginLeft = `${left}px`;
+                if (left >= 200){
+                    clearInterval(ref);
+                }
+            }, 1000 / 60, ++left);
+        }
+
+        function delayChangeColor() {
+            setTimeout( () => {
+                // let box = document.querySelector('#box');
+                // box.style.backgroundColor = 'green';
+                alert('passou 2 segundos');
+                delayChangeColor();
+            }, 2000);
+        }
+
+        // var moved = false;
+
+        // window.onmousemove = () => {
+        //     moved = true;
+        //     console.log('moved!!');
+        // }
+
+        // // Executa uma determinada função após um delay especificado
+        // // setTimeout(() => {
+        // //     alert('Passaram-se 3 segundos');
+        // // }, 3000);
+
+        // setTimeout(() => {
+        //     if(!moved){
+        //         alert('Você ainda está aqui?');
+        //     }
+        // }, 3000);
+
+    </script>
+</body>
+</html>
