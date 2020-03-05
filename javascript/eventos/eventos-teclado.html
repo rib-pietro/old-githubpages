@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="password" id="demo-keyboard">
+
+    <script>
+
+        function getKeyCode(e){
+            // console.log(`called: ${e.which}`); // código da tecla
+            console.log(`called: ${e.key}`); // "conteúdo" da tecla
+            let input = e.target;
+            let password = input.value;
+            if(password.length >= 8){
+                input.style.border = '1px solid green';
+            } else {
+                input.style.border = '1px solid red';
+            }
+        }
+
+        /*
+        keypress
+        keydown
+        keyup
+        */
+
+        let input = document.querySelector('#demo-keyboard');
+        input.addEventListener('keydown', getKeyCode);
+
+    </script>
+</body>
+</html>

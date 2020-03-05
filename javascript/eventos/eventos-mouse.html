@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #power-bar{
+            height: 30px;
+            width: 0px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <button id="test-button">
+        Clique aqui!
+    </button>
+    <button id="press-bar">LOAD</button>
+    <div id="power-bar"></div> -->
+    
+    <script>
+
+        function clicked(e){
+            let button = e.target; // e.target é o alvo do evento, nesse caso, o botão clicado
+            button.style.backgroundColor = 'blue';
+        }
+
+        function pressed(e){
+            let button = e.target;
+            button.innerText = 'Pressionado';
+        }
+
+        function released(e){
+            let button = e.target;
+            button.innerText = 'Soltei';
+            button.style.backgroundColor = 'green';
+        }
+
+        let button = document.querySelector('#test-button');
+        button.addEventListener('click', clicked);
+        button.addEventListener('mousedown', pressed);
+        button.addEventListener('mouseup', released);
+
+        let width = 0;
+        let buttonBar = document.querySelector('#press-bar');
+
+        var ref;
+        function raisePowerBar(e) {
+            let powerBar = document.querySelector('#power-bar');
+            ref = setInterval(() => {
+                powerBar.style.width = `${width}px`;
+                width++;
+                if (width >= 300){
+                    clearInterval(ref);
+                }
+            }, 1000 / 60);
+        }
+
+        function stopRaisingBar(e){
+            clearInterval(ref);
+        }
+
+        buttonBar.addEventListener('mousedown', raisePowerBar);
+        buttonBar.addEventListener('mouseup', stopRaisingBar);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #demo {
+            border: 2px solid black;
+            width: 500px;
+            height: 300px;
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="coords"></div>
+    <div id="coords-demo"></div>
+
+    <div id="demo"></div>
+
+    <script>
+
+        function getCoords(e){
+            let x = e.clientX; // Depende da origem do evento
+            let y = e.clientY;
+            let coords = document.querySelector('#coords');
+            coords.innerHTML = `X: ${x}<br>Y: ${y}`;
+        }
+
+        function getCoordsDemo(e){
+            let x = e.clientX; // Depende da origem do evento
+            let y = e.clientY;
+            let coordsDemo = document.querySelector('#coords-demo');
+            coordsDemo.innerHTML = `X: ${x}<br>Y: ${y}`;
+        }
+
+        let demo = document.querySelector('#demo');
+
+        window.addEventListener('mousemove', getCoords);
+        demo.addEventListener('mousemove', getCoordsDemo);
+    </script>
+</body>
+</html>
