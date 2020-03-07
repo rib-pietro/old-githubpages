@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Callbacks
+
+        // function callbackTest(callback){
+        //     setTimeout(() => {
+        //         console.log('Olá, PP!');
+
+        //         callback();
+        //     }, 1000);
+        // }
+
+        // function dummy(){ // Função de callback
+        //     console.log('Tarefa completa!!!!');
+        // }
+
+        // callbackTest(dummy);
+
+        // Promises
+
+        // let promise1 = new Promise(
+        //     (resolve, reject) => {
+        //         // tarefa
+        //         let soma = 2 + 1;
+                
+        //         if(soma % 2 == 0){
+        //             resolve('Deu tudo certo!');
+        //         } else {
+        //             reject('Deu tudo errado!');
+        //         }
+        //     }
+        // );
+
+        // promise1.then( // Responde ao resolve()
+        //     (msg) => {
+        //         console.log(msg);
+        //     }
+        // ).catch( // Responde ao reject()
+        //     (msg) => {
+        //         console.log(msg);
+        //     }
+        // )
+
+        fetch('https://swapi.co/api/people/1/'/* url de requisição */)
+        .then(
+            /* mapear os dados */
+            (resp) => {
+                return resp.json();
+            }
+        )
+        .then(
+            /* operação sobre os dados */
+            (dados) => {
+                console.log(dados);
+            }
+        )
+        .catch(
+            /* tratamento de exceção */
+            (msg) => {
+                console.log(msg);
+            }
+        )
+    </script>
+</body>
+</html>

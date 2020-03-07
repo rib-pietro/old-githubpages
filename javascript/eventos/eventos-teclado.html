@@ -13,21 +13,36 @@
 </head>
 <body>
     
-    <input type="password" id="demo-keyboard">
+    <input type="text" id="demo-keyboard">
+
+    <p id="tecla-pressionada"></p>
 
     <script>
 
         function getKeyCode(e){
             // console.log(`called: ${e.which}`); // código da tecla
-            console.log(`called: ${e.key}`); // "conteúdo" da tecla
-            let input = e.target;
-            let password = input.value;
-            if(password.length >= 8){
-                input.style.border = '1px solid green';
-            } else {
-                input.style.border = '1px solid red';
-            }
+            // console.log(`called: ${e.key}`); // "conteúdo" da tecla
+
+            // let paragraph = document.querySelector('#tecla-pressionada');
+            // paragraph.innerHTML = e.which;
+            
+            // let input = e.target;
+            // let password = input.value;
+            // if(password.length >= 8){
+            //     input.style.border = '1px solid green';
+            // } else {
+            //     input.style.border = '1px solid red';
+            // }
+
+            console.log('Ctrl: ' + e.ctrlKey);
+            console.log('Shift: ' + e.shiftKey);
+            console.log('Alt: ' + e.altKey);
         }
+
+        let input = document.querySelector('#demo-keyboard');
+        input.addEventListener('keydown', getKeyCode);
+
+
 
         /*
         keypress
@@ -35,8 +50,7 @@
         keyup
         */
 
-        let input = document.querySelector('#demo-keyboard');
-        input.addEventListener('keydown', getKeyCode);
+        
 
     </script>
 </body>

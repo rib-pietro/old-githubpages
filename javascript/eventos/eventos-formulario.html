@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 250px;
+            margin: 1rem 0;
+            position: relative;
+        }
+        .input-container input {
+            border: 0px;
+            border-bottom: 1px solid black;
+        }
+        .input-container input:focus {
+            outline: none;
+        }
+        /* .input-container > * {
+            
+        } */
+        .input-container label {
+            z-index: 10;
+            position: absolute;
+            /* top: -1rem; */
+        }
+    </style>
+</head>
+<body>
+    <form action="#" id="my-form">
+        <!-- <label for="nome">Nome:</label> <br>
+        <input type="text" id="nome"> <br>
+        <label for="sexo">Sexo:</label> <br>
+        <select name="sexo" id="sexo">
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
+            <option value="NB">Não Binário</option>
+        </select> -->
+        <div class="input-container">
+            <label>Nome</label>
+            <input type="text" id="animateInput">
+        </div>
+        <!-- <input type="radio" name="sexo-radio"> Masculino <input type="radio" name="sexo-radio"> Feminino -->
+
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+
+        // let myForm = document.querySelector('#my-form');
+        // let nomeInput = document.querySelector('#nome');
+        // let sexoInput = document.querySelector('#sexo');
+
+        document.querySelector('#animateInput').addEventListener('focus', (e) => {
+            let label = document.querySelector('.input-container label');
+            label.style.top = '-1rem';
+            label.style.fontSize = '0.6rem';
+        });
+
+        document.querySelector('#animateInput').addEventListener('blur', (e) => {
+            let label = document.querySelector('.input-container label');
+            label.style.top = '0rem';
+            label.style.fontSize = '1rem';
+        });
+
+        document.querySelector('#my-form').addEventListener('submit', (e) => {
+            if(document.querySelector('#animateInput').value.length < 8){
+                e.preventDefault();
+                e.target.reset();
+                alert('O campo nome precisa ter mais de 7 caracteres');
+            }
+        });
+
+        /*
+        onchange
+        onfocus
+        onblur
+        onsubmit
+        */
+
+        // nomeInput.addEventListener('change', (e) => {
+        //     console.log('Valor mudou');
+        // });
+        // sexoInput.addEventListener('change', (e) => {
+        //     console.log('Valor mudou');
+        // });
+        // nomeInput.addEventListener('focus', (e) => {
+        //     console.log('Foco no nome!!');
+        // });
+
+    </script>
+</body>
+</html>
